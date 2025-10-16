@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SREENIVASON A V — AMIS Portfolio</title>
+<style>
+:root{
+  --bg:#06070a;
+  --panel:#0d1116;
+  --muted:#9aa5b1;
+  --accent1:#00c6ff;
+  --accent2:#3b82f6;
+  --radius:14px;
+  --maxw:1100px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:radial-gradient(800px 400px at 10% 10%, rgba(59,130,246,0.06), transparent), var(--bg); color:#e6eef6;}
+.container{max-width:var(--maxw);margin:28px auto;padding:22px;border-radius:18px;background:linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.01));box-shadow:0 8px 34px rgba(2,6,23,0.7);}
+.header{display:flex;align-items:center;gap:18px;}
+.avatar{width:96px;height:96px;border-radius:12px;overflow:hidden;flex-shrink:0;border:2px solid rgba(255,255,255,0.05);}
+.avatar img{width:100%;height:100%;object-fit:cover;}
+.title h1{margin:0;font-size:20px;}
+.title p{margin:6px 0 0;color:var(--muted);}
+.tabs{margin-left:auto;display:flex;gap:8px;}
+.tab-btn{background:transparent;border:1px solid rgba(255,255,255,0.03);padding:8px 12px;border-radius:10px;color:var(--muted);cursor:pointer;transition:all .22s;}
+.tab-btn.active{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#021025;transform:translateY(-2px);}
+.grid{display:grid;grid-template-columns:320px 1fr;gap:20px;margin-top:18px;}
+@media (max-width:980px){.grid{grid-template-columns:1fr} .avatar{display:none}}
+.card{background:var(--panel);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);}
+.profile-card{display:flex;flex-direction:column;gap:12px;}
+.badge{padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);color:var(--muted);font-size:13px;}
+.small{font-size:13px;color:var(--muted);}
+.content{min-height:520px;padding:20px;border-radius:12px;overflow:auto;}
+.section{margin-bottom:24px;animation:fadeIn .6s both;}
+h2{color:var(--accent1);}
+h3{color:var(--accent2);}
+p,ul{color:var(--muted);}
+.gallery{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;justify-content:center;}
+.thumb{width:210px;height:130px;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);cursor:pointer;transition:transform .25s;}
+.thumb:hover{transform:translateY(-6px);}
+.thumb img{width:100%;height:100%;object-fit:cover;}
+.diagram{border-radius:10px;border:1px solid rgba(255,255,255,0.05);display:grid;place-items:center;background:#0a0e13;padding:16px;margin-top:12px;}
+.diagram img{max-width:95%;height:auto;object-fit:contain;border-radius:10px;}
+.footer{text-align:center;color:var(--muted);font-size:13px;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.modal{position:fixed;left:0;top:0;width:100%;height:100%;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.8);z-index:50;}
+.modal.show{display:flex;}
+.modal-card{background:var(--panel);padding:14px;border-radius:10px;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="avatar"><img src="assets/PHOTO.jpg" alt="Profile"></div>
+    <div class="title">
+      <h1>SREENIVASON A V</h1>
+      <p class="small">Advanced Medical Imaging Systems Portfolio</p>
+    </div>
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="home">Home</button>
+      <button class="tab-btn" data-tab="imaging">Imaging System</button>
+      <button class="tab-btn" data-tab="references">References</button>
+    </div>
+  </div>
+
+  <div class="grid">
+    <aside class="card profile-card">
+      <h3>SREENIVASON A V</h3>
+      <div class="small">Roll: RA2512015010006</div>
+      <div class="badge">📞 +91 95973 21632</div>
+      <div class="badge">📧 avsreenivason@gmail.com</div>
+      <div><strong class="small">Skills:</strong></div>
+      <div class="badge">Imaging Physics</div>
+      <div class="badge">Image Reconstruction</div>
+      <div class="badge">3D Visualization</div>
+    </aside>
+
+    <main class="card content" id="mainContent">
+
+      <!-- HOME -->
+      <section id="home" class="section show">
+        <h2>Welcome — I'm SREENIVASON A V</h2>
+        <p>This portfolio presents my study on <strong>Multi-slice Helical CT Reconstruction</strong>, an advanced diagnostic imaging system that combines speed, precision, and efficiency to create highly detailed cross-sectional and 3D representations of internal anatomy. Through this portfolio, I aim to highlight the background, instrumentation, advantages, applications, and future potential of this technology in clinical radiology and research.</p>
+      </section>
+
+      <!-- IMAGING SYSTEM -->
+      <section id="imaging" class="section" style="display:none;">
+        <h2>Multi-slice Helical CT Reconstruction</h2>
+
+        <h3>Background</h3>
+        <p>The concept of helical CT emerged in the early 1990s with the development of slip-ring technology, allowing continuous rotation of the X-ray tube and detectors. Unlike conventional CT, which captured discrete slices, helical CT enabled the table to move smoothly during scanning, creating a continuous spiral dataset. As engineering evolved, multi-slice detectors were introduced, capturing multiple slices per rotation. This innovation significantly improved scanning speed, image resolution, and patient comfort. Combined with faster processors and efficient interpolation algorithms, multi-slice helical CT revolutionized trauma and cardiac imaging by producing accurate volumetric data within seconds.</p>
+        <div class="diagram">
+          <img src="assets/ct_diagram.jpeg" alt="Helical CT diagram">
+          <p class="small">Fig 1: Helical CT beam path showing spiral data acquisition.</p>
+        </div>
+
+        <h3>Working Mechanism</h3>
+        <p>In multi-slice helical CT, the X-ray tube rotates around the patient as the table moves continuously through the gantry. This motion forms a helical path of X-rays through the body. A multi-row detector array captures several slices per rotation, drastically increasing data acquisition speed. The data are then reconstructed into images using mathematical algorithms such as <strong>Filtered Back Projection (FBP)</strong> and <strong>Iterative Reconstruction (IR)</strong>. Recent systems employ AI-based reconstruction for superior detail and lower radiation dose. This mechanism allows entire organs to be scanned within seconds, minimizing motion artifacts and improving diagnostic confidence.</p>
+
+        <h3>Instrumentation</h3>
+        <p>A multi-slice helical CT scanner consists of critical components working together in harmony:</p>
+        <ul>
+          <li><strong>X-ray Tube and Generator:</strong> Produces high-energy X-rays for image formation.</li>
+          <li><strong>Detector Array:</strong> Multiple rows of solid-state detectors that capture transmitted X-rays.</li>
+          <li><strong>Slip-Ring Gantry:</strong> Enables continuous 360° rotation without cable tangling.</li>
+          <li><strong>Data Acquisition System (DAS):</strong> Converts analog signals from detectors to digital form.</li>
+          <li><strong>Reconstruction Computer:</strong> Performs calculations to create axial and 3D images.</li>
+          <li><strong>Patient Table:</strong> Moves steadily through the gantry, synchronizing with rotation.</li>
+        </ul>
+        <div class="diagram">
+          <img src="assets/ct_components.jpg" alt="CT Scanner Components">
+          <p class="small">Fig 2: Major components of a multi-slice helical CT scanner.</p>
+        </div>
+
+        <h3>Image Gallery</h3>
+        <div class="gallery">
+          <div class="thumb" onclick="openModal('assets/ct_sample1.jpg')"><img src="assets/ct_sample1.jpg" alt="CT axial lung scan"></div>
+          <div class="thumb" onclick="openModal('assets/ct_sample2.jpg')"><img src="assets/ct_sample2.jpg" alt="CT abdomen scan"></div>
+          <div class="thumb" onclick="openModal('assets/ct_sample3.jpg')"><img src="assets/ct_sample3.jpg" alt="CT angiography"></div>
+          <div class="thumb" onclick="openModal('assets/ct_sample4.jpg')"><img src="assets/ct_sample4.jpg" alt="CT segmentation"></div>
+        </div>
+        <p class="small">Click any image to enlarge.</p>
+
+        <h3>Advantages</h3>
+        <p>Multi-slice helical CT offers rapid scanning and excellent image quality. The continuous rotation and multi-row detector design minimize motion artifacts, enabling high-speed imaging of moving organs such as the heart and lungs. It provides isotropic voxels for accurate 3D reconstructions and multiplanar reformats. Moreover, dose-optimization techniques and iterative reconstruction reduce radiation exposure while preserving detail. Compared to conventional CT, it offers faster examinations, greater anatomical coverage, and higher diagnostic accuracy, making it indispensable in modern clinical practice.</p>
+
+        <h3>Applications</h3>
+        <p>Multi-slice helical CT is widely used in medical and research settings. Clinically, it supports cardiac and coronary angiography, pulmonary embolism detection, oncological staging, and neuroimaging. In trauma care, it enables rapid whole-body scanning to assess internal injuries. In research, it assists in quantitative imaging, radiomics, and image-guided procedures. Its capability for dynamic and 3D visualization makes it crucial in planning surgeries, evaluating vascular diseases, and monitoring therapeutic outcomes. Its adaptability has made it one of the most valuable diagnostic imaging modalities globally.</p>
+
+        <h3>Future Scope</h3>
+        <p>The future of multi-slice helical CT lies in innovations that improve accuracy, reduce dose, and expand diagnostic capabilities. Emerging <strong>photon-counting detectors</strong> enhance spectral resolution and tissue contrast. Integration of <strong>AI and deep learning algorithms</strong> will automate image reconstruction, segmentation, and pathology detection. <strong>Dual-energy CT</strong> and <strong>4D imaging</strong> promise better visualization of dynamic physiological processes. Compact designs and low-dose pediatric protocols will make CT safer and more accessible. These developments position multi-slice CT as a foundation for precision imaging and personalized medicine in the coming decade.</p>
+
+        <p class="footer">Prepared by: <strong>SREENIVASON A V</strong> • Roll: RA2512015010006 • Oct 2025</p>
+      </section>
+
+      <!-- REFERENCES -->
+      <section id="references" class="section" style="display:none;">
+        <h2>References</h2>
+        <ol class="small">
+          <li>W. A. Kalender, <i>Computed Tomography: Fundamentals, System Technology, Image Quality, Applications</i>, Publicis Publishing, 2011.</li>
+          <li>J. Hsieh, <i>Computed Tomography: Principles, Design, Artifacts, and Recent Advances</i>, 3rd ed., SPIE Press, 2022.</li>
+          <li>C. H. McCollough et al., “Multi-slice CT: Technical principles and future directions,” <i>Radiology</i>, vol. 276, no. 3, pp. 637–653, 2015.</li>
+          <li>T. Flohr et al., “Performance evaluation of modern multi-slice CT systems,” <i>European Radiology</i>, vol. 25, no. 2, pp. 364–378, 2013.</li>
+          <li>Siemens Healthineers, “Advances in CT Reconstruction and Photon-Counting Technology,” White Paper, 2024.</li>
+        </ol>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- Modal Viewer -->
+<div id="modal" class="modal">
+  <div class="modal-card">
+    <button onclick="closeModal()" style="float:right;background:none;color:#fff;border:none;font-size:16px;">✖</button>
+    <div id="modalContent" style="width:100%;height:520px;display:grid;place-items:center;"></div>
+  </div>
+</div>
+
+<script>
+const tabBtns=document.querySelectorAll('.tab-btn');
+function switchTab(name){
+  tabBtns.forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('main .section').forEach(p=>p.style.display='none');
+  document.querySelector('[data-tab="'+name+'"]')?.classList.add('active');
+  const el=document.getElementById(name);
+  if(el){el.style.display='block';}
+}
+tabBtns.forEach(b=>b.addEventListener('click',()=>switchTab(b.dataset.tab)));
+switchTab('home');
+
+function openModal(src){
+  const m=document.getElementById('modal');
+  const c=document.getElementById('modalContent');
+  m.classList.add('show');
+  c.innerHTML='<img src="'+src+'" style="max-width:100%;max-height:100%;border-radius:8px;">';
+}
+function closeModal(){
+  const m=document.getElementById('modal');
+  m.classList.remove('show');
+  document.getElementById('modalContent').innerHTML='';
+}
+</script>
+</body>
+</html>
